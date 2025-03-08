@@ -42,7 +42,7 @@ const Skills = () => {
                         >
                             <div className="relative z-10">
                                 <div className="flex items-center gap-3 mb-3">
-                                    {skill.icon && <div className="text-[#6f1cd7] w-5 h-5">{<skill.icon/>}</div>}
+                                    <div className="text-[#6f1cd7] w-5 h-5">{<skill.icon/>}</div>
                                 </div>
                                 <p className="text-white font-medium tracking-wide mb-2">
                                     {skill.title}
