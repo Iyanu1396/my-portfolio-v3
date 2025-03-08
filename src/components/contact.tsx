@@ -3,24 +3,7 @@ import { useState, useEffect } from "react";
 import Form from "./form";
 
 const Contact = () => {
-  const [timeOfDay, setTimeOfDay] = useState(getTimeOfDay());
 
-  useEffect(() => {
-    setTimeOfDay(getTimeOfDay());
-  }, []);
-
-  function getTimeOfDay() {
-    const now = new Date();
-    const currentHour = now.getHours();
-
-    if (currentHour >= 6 && currentHour < 12) {
-      return "morning";
-    } else if (currentHour >= 12 && currentHour < 18) {
-      return "afternoon";
-    } else {
-      return "evening";
-    }
-  }
 
   return (
     <section className="mx-[30px] lg:mx-[76px] lg:mt-[150px]">

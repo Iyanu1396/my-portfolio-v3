@@ -20,7 +20,7 @@ const Hero = () => {
             
             <div className="text-[#F0FEFF] font-medium mt-10 flex flex-col gap-6 md:gap-8 lg:flex-row">
               <p className="max-w-xs lg:max-w-sm">
-                I'm Iyanuoluwa Atijosan, specializing in web and mobile development 
+                I&apos;m Iyanuoluwa Atijosan, specializing in web and mobile development 
                 with expertise in modern frameworks and cloud architecture.
               </p>
               <p className="max-w-xs lg:max-w-sm">
