@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { skills } from "../data/data";
 
 const Skills = () => {
-
-
     return (
         <section className="relative py-32 px-4 md:px-8 lg:px-16 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-[#130b1c] via-[#130b1c]/80 to-transparent opacity-30" />
@@ -43,6 +41,9 @@ const Skills = () => {
                             className="group relative bg-[#130b1c]/80 backdrop-blur-sm border border-[#ffffff08] p-6 transition-all duration-300"
                         >
                             <div className="relative z-10">
+                                <div className="flex items-center gap-3 mb-3">
+                                    {skill.icon && <div className="text-[#6f1cd7] w-5 h-5">{<skill.icon/>}</div>}
+                                </div>
                                 <p className="text-white font-medium tracking-wide mb-2">
                                     {skill.title}
                                 </p>

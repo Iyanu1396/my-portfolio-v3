@@ -1,4 +1,4 @@
-import {HtmlIcon,CssIcon,TailwindCSSIcon,JavaScriptIcon,TypeScriptIcon,ReactJSIcon,NextJSIcon,GitIcon,GithubIcon,FigmaIcon,NodeJSIcon,ExpressJSIcon,MongoDBIcon,ReduxToolkitIcon,TanstackQueryIcon,ReactNativeIcon} from "../../skillsSvg"
+import {HtmlIcon,CssIcon,TailwindCSSIcon,JavaScriptIcon,TypeScriptIcon,ReactJSIcon,NextJSIcon,GitIcon,GithubIcon,FigmaIcon,NodeJSIcon,ExpressJSIcon,MongoDBIcon,ReduxToolkitIcon,TanstackQueryIcon,ReactNativeIcon,SupabaseIcon} from "../../skillsSvg"
 
 export const projects = [
   {
@@ -9,7 +9,7 @@ export const projects = [
   },
   {
     name: "Exclusive Store",
-    desc: "Instant file sharing platform with secure link generation and seamless user experience",
+    desc: "Exclusive Store is a modern e-commerce web app designed to offer a seamless shopping experience. The e-commerce platform provides users with a sleek and responsive interface. Exclusive Store integrates secure payment options through Stripe and features dynamic product listings, intuitive navigation, and personalized shopping recommendations. It's tailored for both mobile and desktop users, ensuring accessibility and performance across all devices.",
     lang: "React.js +  Redux Toolkit + TailwindCSS + Supabase + React-Router",
     link: "https://exclusive-store-three.vercel.app/",
   },
@@ -93,6 +93,11 @@ export const skills = [
     id: Math.random(),
     title: "MongoDB",
     icon:MongoDBIcon
+  },
+  {
+    id: Math.random(),
+    title: "Supabase",
+    icon:SupabaseIcon
   },
   {
     id: Math.random(),
