@@ -1,6 +1,6 @@
 {
-  "name": "newportfolio",
-  "version": "0.1.0",
+  "name": "iyanu_codes_portfolio",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -17,7 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
-    "react-hot-toast": "^2.5.2",
+    "react-hot-toast": "^2.6.0",
     "simple-icons": "^14.9.0"
   },
   "devDependencies": {

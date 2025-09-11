@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import AppToaster from "@/components/toaster";
 
 const geistSans = Poppins({ 
   variable: "--font-geist-sans",
@@ -75,6 +76,7 @@ export default function RootLayout({
         className={`${geistSans.variable}  antialiased`}
       >
         {children}
+        <AppToaster />
       </body>
     </html>
   );

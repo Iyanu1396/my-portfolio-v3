@@ -6,13 +6,11 @@ import Projects from "@/components/projects";
 import Services from "@/components/services";
 import Skills from "@/components/skils";
 
-
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <Services />
       <Projects />
       <Skills />
       <Contact />
