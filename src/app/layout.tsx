@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   title: "IyanuOluwa Atijosan | Product Engineer",
   description:
     "Product Engineer who is passionate with crafting beautiful and functional digital experiences. With a keen eye for design and a knack for code, I specialize in bringing ideas to life through engaging user interfaces and seamless interactions. By using the newest and and most powerful tools, I design and build web applications that are not only functional but also look great.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   keywords: [
     "Software Engineer",
     "Web Development",
@@ -32,11 +37,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
