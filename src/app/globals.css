@@ -15,21 +15,66 @@
   src: url("/fonts/clash/ClashDisplay-Semibold.otf") format("opentype");
 }
 
+/* CSS Variables for theming */
+:root {
+  /* Light theme (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --text-accent: #6f1cd7;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --border-accent: #6f1cd7;
+  --gradient-start: #6f1cd7;
+  --gradient-end: #3b82f6;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark theme */
+  --bg-primary: #0b040c;
+  --bg-secondary: #130b1c;
+  --bg-tertiary: #1a0f2e;
+  --bg-card: #130b1c;
+  --bg-card-hover: #1a0f2e;
+  --text-primary: #ffffff;
+  --text-secondary: #f0feff;
+  --text-muted: #ffffff99;
+  --text-accent: #6f1cd7;
+  --border-primary: #ffffff10;
+  --border-secondary: #ffffff33;
+  --border-accent: #6f1cd7;
+  --gradient-start: #6f1cd7;
+  --gradient-end: #3b82f6;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5),
+    0 4px 6px -4px rgb(0 0 0 / 0.5);
+}
+
 html {
-  scrollbar-color: rgb(0, 0, 0, 0.4) rgb(0, 0, 0, 0);
+  scrollbar-color: var(--text-muted) transparent;
   scrollbar-width: thin;
 }
 
 body {
-
   scroll-behavior: auto;
   overflow-x: hidden;
   overflow-y: scroll;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: #0b040c;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-clashbold {
@@ -43,28 +88,30 @@ body {
 
 .gradientText {
   overflow: hidden;
-  background: linear-gradient(76deg,
-      #fde1ff,
-      #e0e7ff,
-      #e0f9ff,
-      #fffae9,
-      #e8eaff,
-      #ffe3f7,
-      #daf1ff,
-      #fde1ff,
-      #e0e7ff,
-      #e0f9ff,
-      #fffae9,
-      #e8eaff,
-      #ffe3f7,
-      #daf1ff,
-      #fde1ff,
-      #e0e7ff,
-      #e0f9ff,
-      #fffae9,
-      #e8eaff,
-      #ffe3f7,
-      #daf1ff);
+  background: linear-gradient(
+    76deg,
+    #fde1ff,
+    #e0e7ff,
+    #e0f9ff,
+    #fffae9,
+    #e8eaff,
+    #ffe3f7,
+    #daf1ff,
+    #fde1ff,
+    #e0e7ff,
+    #e0f9ff,
+    #fffae9,
+    #e8eaff,
+    #ffe3f7,
+    #daf1ff,
+    #fde1ff,
+    #e0e7ff,
+    #e0f9ff,
+    #fffae9,
+    #e8eaff,
+    #ffe3f7,
+    #daf1ff
+  );
   background-size: 500% 500%;
   -webkit-animation: slime 45s ease infinite;
   animation: slime 45s ease infinite;
@@ -72,18 +119,41 @@ body {
   -webkit-background-clip: text;
 }
 
-
 .gradientText h1 {
-  @apply font-semibold text-[34px] leading-[36.9px] text-[#CFFAFF] md:leading-[45px] md:text-[35px] md:max-w-max lg:leading-[73.8px] lg:max-w-[580px] lg:text-[60px];
+  @apply font-semibold text-[34px] leading-[36.9px] md:leading-[45px] md:text-[35px] md:max-w-max lg:leading-[73.8px] lg:max-w-[580px] lg:text-[60px];
   font-family: clashBold;
-  color: rgba(255, 255, 255, 0);
+  color: transparent;
   text-transform: capitalize;
-
 }
 
 .gradientText h2 {
-  color: rgba(255, 255, 255, 0);
+  color: transparent;
   text-transform: capitalize;
   font-family: clash;
-  @apply flex items-center font-semibold text-white text-[20px] leading-[30.75px] lg:text-[60px] lg:leading-[73.8px];
+  @apply flex items-center font-semibold text-[20px] leading-[30.75px] lg:text-[60px] lg:leading-[73.8px];
+}
+
+/* Light theme gradient text adjustments */
+[data-theme="light"] .gradientText h1 {
+  color: var(--text-primary);
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .gradientText h2 {
+  color: var(--text-primary);
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

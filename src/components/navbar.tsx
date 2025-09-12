@@ -3,7 +3,8 @@ import clsx from "clsx";
 import { GhIcon } from "./svgs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
+import { useEffect, useState } from "react";
 
 // Moon and Sun icons as SVG components
 interface IconProps {
@@ -21,21 +22,16 @@ const SunIcon = ({ className }: IconProps) => (
   </svg>
 );
 
-const Navbar = () => {
+const NavbarContent = () => {
   const pathname = usePathname();
-  const [isDarkMode, setIsDarkMode] = useState(true); // Starting with dark mode (moon icon)
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    // You can add theme switching logic here later
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
       <main className="">
         <header
           className={clsx(
-            "fixed z-40 top-0 md:relatives bg-[#0b040c]/90 pb-3  w-full pt-[20px] px-[32px] md:py-[30px] lg:px-[80px]"
+            "fixed z-40 top-0 bg-[var(--bg-primary)]/90 backdrop-blur-sm pb-3 w-full pt-[20px] px-[32px] py-[30px] lg:px-[80px] border-b border-[var(--border-primary)]"
           )}
         >
           <div className="max-w-4xl mx-auto">
@@ -43,28 +39,31 @@ const Navbar = () => {
               {/* Theme Toggle Button */}
               <button
                 onClick={toggleTheme}
-                className="relative active:scale-[0.86] transition-all duration-300 hover:bg-white/10 p-2 rounded-full"
+                className="relative active:scale-[0.86] transition-all duration-300 hover:bg-[var(--bg-secondary)] p-2 rounded-full"
               >
-                {isDarkMode ? (
-                  <MoonIcon className="w-[24px] h-[24px] md:w-[30px] md:h-[30px] text-white transition-all duration-300" />
+                {theme === "dark" ? (
+                  <MoonIcon className="w-[24px] h-[24px] md:w-[30px] md:h-[30px] text-[var(--text-primary)] transition-all duration-300" />
                 ) : (
-                  <SunIcon className="w-[24px] h-[24px] md:w-[30px] md:h-[30px] text-yellow-400 transition-all duration-300" />
+                  <SunIcon className="w-[24px] h-[24px] md:w-[30px] md:h-[30px] text-yellow-500 transition-all duration-300" />
                 )}
               </button>
 
               {/* Right side buttons */}
               <div className="flex items-center gap-[16px] md:gap-[24px]">
                 {/* GitHub Link */}
-                <div className="text-[#FFFFFF99] group group-hover:text-white transition-all duration-300">
+                <div className="text-[var(--text-muted)] group group-hover:text-[var(--text-primary)] transition-all duration-300">
                   <Link
                     target="_blank"
                     rel="noreferrer"
                     href="https://github.com/Iyanu1396"
-                    className="group-hover:text-white transition-colors duration-300"
+                    className="group-hover:text-[var(--text-primary)] transition-colors duration-300"
                   >
                     <span className="flex items-center gap-[8px] md:gap-[10px]">
-                      <GhIcon className="opacity-60 w-[26px] h-[26px] md:w-[32px] md:h-[32px] transition-opacity duration-300 group-hover:opacity-100" />
-                      <p className="font-clash text-[15px] md:text-[18px] font-medium group-hover:text-white transition-colors duration-300">
+                      <GhIcon
+                        fill="var(--text-muted)"
+                        className="opacity-60 w-[26px] h-[26px] md:w-[32px] md:h-[32px] transition-opacity duration-300 group-hover:opacity-100"
+                      />
+                      <p className="font-clash text-[15px] md:text-[18px] font-medium group-hover:text-[var(--text-primary)] transition-colors duration-300">
                         github
                       </p>
                     </span>
@@ -72,14 +71,16 @@ const Navbar = () => {
                 </div>
 
                 {/* Resume Button */}
-                <Link
-                  href="https://standardresume.co/r/bimfuqcRzU5D8A4DYzHzG" // Update this to your actual resume path
+                <a
+                  href="https://standardresume.co/r/bimfuqcRzU5D8A4DYzHzG"
+                  target="_blank"
+                  rel="noreferrer"
                   className="group"
                 >
-                  <button className="text-[#FFFFFF99] hover:text-white transition-all duration-300 font-clash text-[15px] md:text-[18px] font-medium px-4 py-2 border border-[#FFFFFF33] hover:border-white/50 rounded-lg hover:bg-white/5 active:scale-[0.95]">
+                  <button className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-all duration-300 font-clash text-[15px] md:text-[18px] font-medium px-4 py-2 border border-[var(--border-secondary)] hover:border-[var(--border-accent)] rounded-lg hover:bg-[var(--bg-secondary)] active:scale-[0.95]">
                     View Resume
                   </button>
-                </Link>
+                </a>
               </div>
             </nav>
           </div>
@@ -87,6 +88,75 @@ const Navbar = () => {
       </main>
     </>
   );
+};
+
+const Navbar = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Return a placeholder navbar during SSR
+    return (
+      <>
+        <main className="">
+          <header
+            className={clsx(
+              "fixed z-40 top-0 bg-[var(--bg-primary)]/90 backdrop-blur-sm pb-3 w-full pt-[20px] px-[32px] py-[30px] lg:px-[80px] border-b border-[var(--border-primary)]"
+            )}
+          >
+            <div className="max-w-4xl mx-auto">
+              <nav className="flex items-center justify-between">
+                {/* Theme Toggle Button Placeholder */}
+                <button className="relative active:scale-[0.86] transition-all duration-300 hover:bg-[var(--bg-secondary)] p-2 rounded-full">
+                  <SunIcon className="w-[24px] h-[24px] md:w-[30px] md:h-[30px] text-yellow-500 transition-all duration-300" />
+                </button>
+
+                {/* Right side buttons */}
+                <div className="flex items-center gap-[16px] md:gap-[24px]">
+                  {/* GitHub Link */}
+                  <div className="text-[var(--text-muted)] group group-hover:text-[var(--text-primary)] transition-all duration-300">
+                    <Link
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://github.com/Iyanu1396"
+                      className="group-hover:text-[var(--text-primary)] transition-colors duration-300"
+                    >
+                      <span className="flex items-center gap-[8px] md:gap-[10px]">
+                        <GhIcon
+                          fill="var(--text-muted)"
+                          className="opacity-60 w-[26px] h-[26px] md:w-[32px] md:h-[32px] transition-opacity duration-300 group-hover:opacity-100"
+                        />
+                        <p className="font-clash text-[15px] md:text-[18px] font-medium group-hover:text-[var(--text-primary)] transition-colors duration-300">
+                          github
+                        </p>
+                      </span>
+                    </Link>
+                  </div>
+
+                  {/* Resume Button */}
+                  <a
+                    href="https://standardresume.co/r/bimfuqcRzU5D8A4DYzHzG"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group"
+                  >
+                    <button className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-all duration-300 font-clash text-[15px] md:text-[18px] font-medium px-4 py-2 border border-[var(--border-secondary)] hover:border-[var(--border-accent)] rounded-lg hover:bg-[var(--bg-secondary)] active:scale-[0.95]">
+                      View Resume
+                    </button>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </header>
+        </main>
+      </>
+    );
+  }
+
+  return <NavbarContent />;
 };
 
 export default Navbar;

@@ -8,7 +8,7 @@ const Hero = () => {
       <section className="mx-auto px-6 py-24 md:px-8 lg:pt-32 lg:px-20">
         <div className="flex flex-col items-start max-w-4xl mx-auto">
           {/* Greeting */}
-          <p className="text-[#F0FEFF] text-lg md:text-xl font-medium mb-4">
+          <p className="text-[var(--text-secondary)] text-lg md:text-xl font-medium mb-4">
             Hey there 👋
           </p>
 
@@ -24,7 +24,7 @@ const Hero = () => {
           </p>
 
           {/* Main Description */}
-          <div className="text-[#F0FEFF] font-medium space-y-6 max-w-3xl">
+          <div className="text-[var(--text-secondary)] font-medium space-y-6 max-w-3xl">
             <p className="text-base md:text-lg leading-relaxed">
               I've been building apps for over 3 years, primarily focusing on
               delivering delightful web experiences. I've built products in
@@ -38,8 +38,22 @@ const Hero = () => {
             </p>
           </div>
 
+          {/* Resume Button */}
+          <div className="mt-12 md:mt-16">
+            <a
+              href="https://standardresume.co/r/bimfuqcRzU5D8A4DYzHzG"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block"
+            >
+              <button className="bg-[var(--gradient-start)] hover:bg-[var(--gradient-end)] text-white font-clash text-[15px] md:text-[18px] font-medium px-6 py-3 border border-[var(--border-accent)] rounded-lg hover:shadow-[var(--shadow-md)] active:scale-[0.95] transition-all duration-300">
+                View Resume
+              </button>
+            </a>
+          </div>
+
           {/* Social Links */}
-          <div className="mt-12 md:mt-16 flex items-center gap-6">
+          <div className="mt-8 flex items-center gap-6">
             <motion.a
               href="https://twitter.com/iyanu_codes"
               target="_blank"
@@ -49,8 +63,8 @@ const Hero = () => {
               className="transition-all duration-300"
             >
               <TwIcon
-                fill="#6f1cd7"
-                className="w-8 h-8 rounded-full border-2 border-[#6f1cd7] p-1.5 hover:bg-white transition-all duration-300"
+                fill="var(--gradient-start)"
+                className="w-8 h-8 rounded-full border-2 border-[var(--gradient-start)] p-1.5 hover:bg-[var(--bg-secondary)] transition-all duration-300"
               />
             </motion.a>
 
@@ -63,8 +77,8 @@ const Hero = () => {
               className="transition-all duration-300"
             >
               <InIcon
-                fill="#6f1cd7"
-                className="w-8 h-8 rounded-full border-2 border-[#6f1cd7] p-1.5 hover:bg-white transition-all duration-300"
+                fill="var(--gradient-start)"
+                className="w-8 h-8 rounded-full border-2 border-[var(--gradient-start)] p-1.5 hover:bg-[var(--bg-secondary)] transition-all duration-300"
               />
             </motion.a>
           </div>

@@ -37,55 +37,59 @@ const Footer = () => {
   const displayTime = mounted ? time : "";
 
   return (
-    <section className="mx-[30px] mt-[60px] pb-[20px] lg:pb-[50px] lg:mx-[76px] lg:mt-[150px]">
-      <div className="max-w-4xl mx-auto">
-        <div className="h-[2px] mt-[63.37px] bg-[#130b1c]"></div>
-        <div className="mt-[63px] flex flex-col-reverse justify-start gap-5 md:gap-0 md:flex md:flex-row md:justify-between md:items-center ">
-          <div className="flex flex-col justify-start items-start">
-            <div className="flex flex-row items-center lg:gap-[4px]">
-              <span>
-                <Copyright className="size-[18px] md:size-[20px]" />
-              </span>
-              <p className={`text-[#FFFFFF99] md:text-xl text-lg font-medium`}>
-                IyanuOluwa{" "}
-                <span className="text-[#FFFFFF] text-[14px] lg:text-base">
-                  {new Date().getFullYear()}
+    <section className="mt-[60px] lg:mt-[150px]">
+      {/* Demarcation line that touches both sides */}
+      <div className="h-[2px] bg-[var(--border-primary)]"></div>
+
+      <div className="mx-[30px] pb-[20px] lg:pb-[50px] lg:mx-[76px]">
+        <div className="max-w-4xl mx-auto">
+          <div className="mt-[63px] flex flex-col-reverse justify-between items-center gap-5 md:flex-row md:items-center">
+            <div className="flex flex-col items-start">
+              <div className="flex flex-row items-center gap-2">
+                <span>
+                  <Copyright className="size-[18px] md:size-[20px]" />
                 </span>
+                <p className="text-[var(--text-muted)] md:text-xl text-lg font-medium">
+                  © IyanuOluwa{" "}
+                  <span className="text-[var(--text-primary)] text-[14px] lg:text-base">
+                    {new Date().getFullYear()}
+                  </span>
+                </p>
+              </div>
+              <p className="text-[var(--text-muted)] transition-all duration-300 text-sm lg:text-base mt-1">
+                {displayTime}
+                {mounted && timezone ? ` (${timezone})` : ""}
               </p>
             </div>
-            <p className="text-[#FFFFFF99] transition-all duration-300 text-end text-sm lg:text-base mt-1">
-              {displayTime}
-              {mounted && timezone ? ` (${timezone})` : ""}
-            </p>
-          </div>
-          <div className="mt-[10px] md:mt-[65px] flex justify-start items-center gap-[20px] ">
-            <motion.a
-              href="https://twitter.com/iyanu_codes"
-              target="_blank"
-              rel="noreferrer"
-              whileTap={{ scale: 1.1 }}
-              whileHover={{ scale: 0.99 }}
-              className="h-auto w-auto"
-            >
-              <TwIcon
-                fill="#FFFFFF99"
-                className={`w-[30px] h-[30px] rounded-full border-[#FFFFFF99] border-solid border-[2px] p-1  transition-all duration-500 hover:bg-gray-500`}
-              />
-            </motion.a>
+            <div className="flex justify-center items-center gap-[20px] md:justify-end">
+              <motion.a
+                href="https://twitter.com/iyanu_codes"
+                target="_blank"
+                rel="noreferrer"
+                whileTap={{ scale: 1.1 }}
+                whileHover={{ scale: 0.99 }}
+                className="h-auto w-auto"
+              >
+                <TwIcon
+                  fill="var(--text-muted)"
+                  className={`w-[30px] h-[30px] rounded-full border-[var(--text-muted)] border-solid border-[2px] p-1 transition-all duration-500 hover:bg-[var(--bg-secondary)]`}
+                />
+              </motion.a>
 
-            <motion.a
-              href="https://www.linkedin.com/in/atijosan-iyanuoluwa-827049246/"
-              target="_blank"
-              rel="noreferrer"
-              whileTap={{ scale: 1.1 }}
-              whileHover={{ scale: 0.99 }}
-              className="h-auto w-auto"
-            >
-              <InIcon
-                fill={`#FFFFFF99`}
-                className="w-[30px] h-[30px] rounded-full border-[#FFFFFF99] border-solid border-[2px] p-0.5  transition-all duration-700 hover:bg-gray-500"
-              />
-            </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/atijosan-iyanuoluwa-827049246/"
+                target="_blank"
+                rel="noreferrer"
+                whileTap={{ scale: 1.1 }}
+                whileHover={{ scale: 0.99 }}
+                className="h-auto w-auto"
+              >
+                <InIcon
+                  fill="var(--text-muted)"
+                  className="w-[30px] h-[30px] rounded-full border-[var(--text-muted)] border-solid border-[2px] p-0.5 transition-all duration-700 hover:bg-[var(--bg-secondary)]"
+                />
+              </motion.a>
+            </div>
           </div>
         </div>
       </div>

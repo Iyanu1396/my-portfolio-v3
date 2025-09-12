@@ -40,43 +40,45 @@ function Form() {
       className="mt-4 flex flex-col gap-2"
     >
       <input
-        className="w-full border border-[#6f1cd7] bg-inherit p-4 focus:outline-none"
+        className="w-full border border-[var(--border-accent)] bg-[var(--bg-card)] text-[var(--text-primary)] placeholder-[var(--text-muted)] p-4 focus:outline-none focus:ring-2 focus:ring-[var(--border-accent)] rounded-lg transition-all duration-300"
         type="text"
         placeholder="What's your name?"
         {...register("name", {
           required: "This field is required",
         })}
       />
-      <span className="text-sm font-bold text-red-700">
+      <span className="text-sm font-bold text-red-500">
         {errors?.name?.message}
       </span>
       <input
-        className="w-full border border-[#6f1cd7] bg-inherit p-4 focus:outline-none"
+        className="w-full border border-[var(--border-accent)] bg-[var(--bg-card)] text-[var(--text-primary)] placeholder-[var(--text-muted)] p-4 focus:outline-none focus:ring-2 focus:ring-[var(--border-accent)] rounded-lg transition-all duration-300"
         type="email"
         placeholder="What's your @email?"
         {...register("mail", {
           required: "This field is required",
         })}
       />
-      <span className="text-sm font-bold text-red-700">
+      <span className="text-sm font-bold text-red-500">
         {errors?.mail?.message}
       </span>
 
       <input
-        className="w-full border border-[#6f1cd7] bg-inherit p-4 focus:outline-none"
+        className="w-full border border-[var(--border-accent)] bg-[var(--bg-card)] text-[var(--text-primary)] placeholder-[var(--text-muted)] p-4 focus:outline-none focus:ring-2 focus:ring-[var(--border-accent)] rounded-lg transition-all duration-300"
         type="text"
         placeholder="What do you have to tell me/offer me?"
         {...register("offer", {
           required: "This field is required",
         })}
       />
-      <span className="text-sm font-bold text-red-700">
+      <span className="text-sm font-bold text-red-500">
         {errors?.offer?.message}
       </span>
 
       <button
-        className={`w-full p-4 text-xl font-bold text-white ${
-          isLoading ? "cursor-wait bg-gray-400" : "cursor-pointer bg-[#6f1cd7]"
+        className={`w-full p-4 text-xl font-bold text-white rounded-lg transition-all duration-300 ${
+          isLoading
+            ? "cursor-wait bg-gray-400"
+            : "cursor-pointer bg-[var(--gradient-start)] hover:bg-[var(--gradient-end)] active:scale-95"
         }`}
         type="submit"
         disabled={isLoading}
