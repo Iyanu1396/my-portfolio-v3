@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { InIcon, TwIcon } from "./svgs";
+import NowPlaying from "./NowPlaying";
 
 const Hero = () => {
   return (
@@ -22,6 +23,11 @@ const Hero = () => {
             Product Engineer working with React, Next.js, Node.js and
             Typescript.
           </p>
+
+          {/* Now Playing - Compact display */}
+          <div className="mb-8">
+            <NowPlaying />
+          </div>
 
           {/* Main Description */}
           <div className="text-[var(--text-secondary)] font-medium space-y-6 max-w-3xl">
