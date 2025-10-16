@@ -22,7 +22,7 @@ export default function NowPlaying() {
         const res = await fetch("/api/now-playing");
 
         if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
+          throw new Error(`HTTP error! status: ${res}`);
         }
 
         const data = await res.json();
