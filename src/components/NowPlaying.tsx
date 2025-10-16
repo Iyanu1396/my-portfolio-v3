@@ -179,6 +179,18 @@ export default function NowPlaying() {
             className="flex items-center gap-2 min-w-0"
           >
             <div className="min-w-0">
+              <div className="flex items-center gap-1.5 mb-1">
+                <svg
+                  className="w-3 h-3 text-[var(--text-muted)]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+                </svg>
+                <span className="text-[10px] font-semibold text-[var(--text-muted)] uppercase tracking-wide">
+                  Listening to
+                </span>
+              </div>
               <p className="text-[var(--text-primary)] font-medium text-sm truncate max-w-[200px] group-hover:text-[var(--text-accent)] transition-colors duration-300">
                 {track.name}
               </p>

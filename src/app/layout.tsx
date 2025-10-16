@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import AppToaster from "@/components/toaster";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 const geistSans = Poppins({
   variable: "--font-geist-sans",
@@ -92,7 +92,11 @@ export default function RootLayout({
           {children}
           <AppToaster />
         </ThemeProvider>
-        <Analytics />
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="95011804-8056-4c83-8670-12941d7b259f"
+        />
       </body>
     </html>
   );
