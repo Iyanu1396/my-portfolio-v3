@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import AppToaster from "@/components/toaster";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Poppins({
   variable: "--font-geist-sans",
@@ -91,6 +92,7 @@ export default function RootLayout({
           {children}
           <AppToaster />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
