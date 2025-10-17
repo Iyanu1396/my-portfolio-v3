@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -9,21 +8,26 @@ function Form() {
   const [isLoading, setIsLoading] = useState(false);
 
   async function onSubmit(data) {
-    const templateParams = {
-      name: data.name,
-      mail: data.mail,
-      offer: data.offer,
-    };
-
     try {
       setIsLoading(true);
-      const response = await emailjs.send(
-        "service_r7hua8b",
-        "template_f9otiu7",
-        templateParams,
-        "UAWcnE08apwtLRMBa"
-      );
-      console.log("SUCCESS!", response.status, response.text);
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          mail: data.mail,
+          offer: data.offer,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message");
+      }
+
       reset();
       toast.success("Message sent successfully!");
     } catch (error) {
@@ -62,9 +66,8 @@ function Form() {
         {errors?.mail?.message}
       </span>
 
-      <input
-        className="w-full border border-[var(--border-accent)] bg-[var(--bg-card)] text-[var(--text-primary)] placeholder-[var(--text-muted)] p-4 focus:outline-none focus:ring-2 focus:ring-[var(--border-accent)] rounded-lg transition-all duration-300"
-        type="text"
+      <textarea
+        className="w-full border border-[var(--border-accent)] bg-[var(--bg-card)] text-[var(--text-primary)] placeholder-[var(--text-muted)] p-4 focus:outline-none focus:ring-2 focus:ring-[var(--border-accent)] rounded-lg transition-all duration-300 min-h-[120px] resize-y"
         placeholder="What do you have to tell me/offer me?"
         {...register("offer", {
           required: "This field is required",
