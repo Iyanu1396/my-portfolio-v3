@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface Track {
   isPlaying: boolean;
@@ -93,7 +94,7 @@ export default function NowPlaying() {
         >
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
         </svg>
-        <span className="font-medium">Not listening to anything</span>
+        <span className="font-medium">Not listening to anything :)</span>
       </motion.div>
     );
   }
@@ -119,10 +120,12 @@ export default function NowPlaying() {
             }}
             className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--border-accent)] shadow-md"
           >
-            <img
-              src={track.image}
-              alt={track.name}
-              className="w-full h-full object-cover"
+            <Image
+              src={track.image || ""}
+              alt={track.name || "Album cover"}
+              fill
+              className="object-cover"
+              sizes="40px"
             />
           </motion.div>
           {/* Small pulsing indicator */}

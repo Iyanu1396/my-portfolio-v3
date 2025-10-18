@@ -16,6 +16,12 @@ const projects = [
     link: "https://equisettle.co.uk/",
     image: "/images/eqisettle-home.png",
   },
+  {
+    name: "Kern UI",
+    desc: "KernUI is a thoughtfully crafted UI kit of over 3,000 production-ready components with, built-in theming, and crystal-clear docs for product teams.",
+    link: "https://kernui.com",
+    image: "/images/kern-ui-home.png",
+  },
 ];
 
 const Projects = () => {
