@@ -45,7 +45,7 @@ const Hero = () => {
           </div>
 
           {/* Resume Button */}
-          <div className="mt-12 md:mt-16">
+          <div className="mt-12 md:mt-16 space-x-4">
             <a
               href="https://standardresume.co/r/bimfuqcRzU5D8A4DYzHzG"
               target="_blank"
@@ -54,6 +54,16 @@ const Hero = () => {
             >
               <button className="bg-[var(--gradient-start)] hover:bg-[var(--gradient-end)] text-white font-clash text-[15px] md:text-[18px] font-medium px-6 py-3 border border-[var(--border-accent)] rounded-lg hover:shadow-[var(--shadow-md)] active:scale-[0.95] transition-all duration-300">
                 View Resume
+              </button>
+            </a>
+            <a
+              href="https://cal.com/iyanu-codes/1on1"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block"
+            >
+              <button className="bg-[var(--gradient-start)] hover:bg-[var(--gradient-end)] text-white font-clash text-[15px] md:text-[18px] font-medium px-6 py-3 border border-[var(--border-accent)] rounded-lg hover:shadow-[var(--shadow-md)] active:scale-[0.95] transition-all duration-300">
+                Schedule a Call
               </button>
             </a>
           </div>
