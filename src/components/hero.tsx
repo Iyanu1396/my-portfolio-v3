@@ -39,8 +39,7 @@ const Hero = () => {
 
             <p className="text-base md:text-lg leading-relaxed">
               Product Engineer at Hackmamba. I worked as a Full Stack Engineer
-              at Twosvn Agency (UK) and actively freelance on Upwork,
-              specializing primarily as a Chrome Extension Developer.
+              at Twosvn Agency (UK).
             </p>
           </div>
 
