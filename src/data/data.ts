@@ -1,4 +1,22 @@
-import {HtmlIcon,CssIcon,TailwindCSSIcon,JavaScriptIcon,TypeScriptIcon,ReactJSIcon,NextJSIcon,GitIcon,GithubIcon,FigmaIcon,NodeJSIcon,ExpressJSIcon,MongoDBIcon,ReduxToolkitIcon,TanstackQueryIcon,ReactNativeIcon,SupabaseIcon} from "../../skillsSvg"
+import {
+  HtmlIcon,
+  CssIcon,
+  TailwindCSSIcon,
+  JavaScriptIcon,
+  TypeScriptIcon,
+  ReactJSIcon,
+  NextJSIcon,
+  GitIcon,
+  GithubIcon,
+  FigmaIcon,
+  NodeJSIcon,
+  ExpressJSIcon,
+  MongoDBIcon,
+  ReduxToolkitIcon,
+  TanstackQueryIcon,
+  ReactNativeIcon,
+  SupabaseIcon,
+} from "../../skillsSvg";
 
 export const projects = [
   {
@@ -28,90 +46,101 @@ export const skills = [
   {
     id: 0,
     title: "Html",
-    icon:HtmlIcon
+    icon: HtmlIcon,
   },
   {
     id: 1,
     title: "Css",
-    icon:CssIcon
+    icon: CssIcon,
   },
   {
     id: 3,
     title: "TailwindCSS",
-    icon:TailwindCSSIcon
-    
+    icon: TailwindCSSIcon,
   },
 
   {
     id: 5,
     title: "JavaScript",
-    icon:JavaScriptIcon
+    icon: JavaScriptIcon,
   },
   {
     id: 6,
     title: "TypeScript",
-    icon:TypeScriptIcon
+    icon: TypeScriptIcon,
   },
   {
     id: 8,
     title: "ReactJS",
-    icon:ReactJSIcon
+    icon: ReactJSIcon,
   },
   {
     id: 9,
     title: "NextJS",
-    icon:NextJSIcon
+    icon: NextJSIcon,
   },
   {
     id: 10,
     title: "Git",
-    icon:GitIcon
+    icon: GitIcon,
   },
   {
     id: 11,
     title: "Github",
-    icon:GithubIcon
+    icon: GithubIcon,
   },
   {
     id: 12,
     title: "Figma",
-    icon:FigmaIcon
+    icon: FigmaIcon,
   },
 
   {
     id: 15,
     title: "NodeJS",
-    icon:NodeJSIcon
+    icon: NodeJSIcon,
   },
   ,
   {
     id: 16,
     title: "ExpressJS",
-    icon:ExpressJSIcon
+    icon: ExpressJSIcon,
   },
   {
     id: Math.random(),
     title: "MongoDB",
-    icon:MongoDBIcon
+    icon: MongoDBIcon,
   },
   {
     id: Math.random(),
     title: "Supabase",
-    icon:SupabaseIcon
+    icon: SupabaseIcon,
   },
   {
     id: Math.random(),
     title: "Redux Toolkit",
-    icon:ReduxToolkitIcon
+    icon: ReduxToolkitIcon,
   },
   {
     id: Math.random(),
     title: "Tanstack Query",
-    icon:TanstackQueryIcon
+    icon: TanstackQueryIcon,
   },
   {
     id: Math.random(),
     title: "React Native",
-    icon:ReactNativeIcon
+    icon: ReactNativeIcon,
+  },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "Maanasa Gadey",
+    title: "Software Engineer at Workday",
+    location: "United States",
+    image: "/images/maanasa.jpeg",
+    testimonial:
+      "Emanuel is technically capable and he gets the job done in good quality and in timely manner. BUT, for a smooth job completion, you need to make sure that everything with the milestones and deliverables is agreed upon at the beginning in clear detailed writing, to eliminate any conflicts due to misunderstand, don't take logical things for granted, have it written and agreed upon instead. My experience with Emanuel was good apart from this specific point.",
   },
 ];
