@@ -141,6 +141,6 @@ export const testimonials = [
     location: "United States",
     image: "/images/maanasa.jpeg",
     testimonial:
-      "Emanuel is technically capable and he gets the job done in good quality and in timely manner. BUT, for a smooth job completion, you need to make sure that everything with the milestones and deliverables is agreed upon at the beginning in clear detailed writing, to eliminate any conflicts due to misunderstand, don't take logical things for granted, have it written and agreed upon instead. My experience with Emanuel was good apart from this specific point.",
+      "Iyanuoluwa Atijosan is an exceptionally talented and highly technical professional who consistently goes above and beyond in every task he takes on. His depth of expertise, problem-solving skills, and ability to quickly grasp complex concepts make him an invaluable asset to any team. Beyond his technical abilities, he brings a proactive mindset, strong work ethic, and genuine commitment to delivering high-quality results. Working with Iyanuoluwa is always a pleasure, as his contributions not only elevate the project’s success but also inspire those around him to strive for excellence.",
   },
 ];
