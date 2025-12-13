@@ -143,4 +143,13 @@ export const testimonials = [
     testimonial:
       "Iyanuoluwa Atijosan is an exceptionally talented and highly technical professional who consistently goes above and beyond in every task he takes on. His depth of expertise, problem-solving skills, and ability to quickly grasp complex concepts make him an invaluable asset to any team. Beyond his technical abilities, he brings a proactive mindset, strong work ethic, and genuine commitment to delivering high-quality results. Working with Iyanuoluwa is always a pleasure, as his contributions not only elevate the project’s success but also inspire those around him to strive for excellence.",
   },
+  {
+    id: 2,
+    image: "/images/shater.avif",
+    name: "Shater Mchiaga-Tsavsar",
+    title: "Senior Product Designer",
+    location: "Abuja, Nigeria",
+    testimonial:
+      "It was great working with him, having someone you don't have to micromanage because he knows what he is doing will always be a great advantage",
+  },
 ];
