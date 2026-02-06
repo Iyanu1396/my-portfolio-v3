@@ -72,7 +72,7 @@ const NavbarContent = () => {
 
                 {/* Resume Button */}
                 <a
-                  href="https://standardresume.co/r/bimfuqcRzU5D8A4DYzHzG"
+                  href="https://docs.google.com/document/d/1Wxbqd4uI0ld1eskHeLYn42B9fJ9FRjF5EEIn9kACaHQ/edit?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                   className="group"
